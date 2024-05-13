@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../notes.service';
 import { Note } from '../model/note.model';
 import { UuidGeneratorService } from 'src/app/global/service/uuid-generator.service';
 
@@ -16,24 +15,13 @@ export class NotesListComponent implements OnInit {
   public date: string='';
   public hasEmptyInput: boolean = false;
 
-  constructor(private notesService: NotesService, private uuidService: UuidGeneratorService) { }
+  constructor( private uuidService: UuidGeneratorService) { }
 
   ngOnInit(): void {
-    this.notesService.dataSource$.subscribe((note) => this.notes = note);
-    this.notesService.initialState();
+
   }
 
   addNewNote() {
-    if (!(this.title && this.content)) {
-      this.hasEmptyInput = true;
-      return;
-    };
-    let note = {
-      id: this.uuidService.generateUuid(),
-      title: this.title,
-      content: this.content,
-      date: this.date
-    }
-    this.notesService.postNote(note);
+
   }
 }
