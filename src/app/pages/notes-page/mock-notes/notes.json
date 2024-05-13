@@ -1,0 +1,22 @@
+{
+    "notes": [
+        {
+            "id": 0,
+            "title": "Monday",
+            "content": "Back from the weekend!",
+            "date":"08-04-2024"
+        },
+        {
+            "id": 3,
+            "title": "Tuesday",
+            "content": "Oh my God, I cannot do this :(",
+            "date":"09-04-2024"
+        },
+        {
+            "id": 2,
+            "title": "Wednesday",
+            "content": "At least the weekend is coming close",
+            "date":"10-04-2024"
+        }
+    ]
+}

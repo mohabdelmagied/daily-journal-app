@@ -1,0 +1,47 @@
+
+<form class="flex flex-col h-full">
+    <label
+        for="title"
+        class="font-semibold">
+        Entry Title
+    </label>
+    <input
+        id="title"
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        class="rounded-xl p-4 border-sky-700 border mb-4"
+    >
+    <label
+        for="date"
+        class="font-semibold">
+        Date
+    </label>
+    <input
+        id="date"
+        type="date"
+        name="date"
+        [(ngModel)]="date"
+        class="rounded-xl p-4 border-sky-700 border mb-4"
+    >
+    <label
+        for="content"
+        class="font-semibold">
+        Content
+    </label>
+    <input
+        id="content"
+        name="content"
+        [(ngModel)]="content"
+        class="rounded-xl border border-sky-700 p-4 mb-4 flex-1">
+    <span *ngIf="hasEmptyInput" class="text-red-700 p-4">Please fill all inputs</span>
+    <button
+    type="button"
+    (click)="addNewNote()"
+    class="rounded-xl p-4 font-semibold border-2 bg-sky-800 text-white mb-4 hover:bg-sky-800 hover:text-white duration-200 ease-in uppercase">
+    Add note
+</button>
+</form>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-gray-200 rounded-2xl p-8">
+    <app-note *ngFor="let note of notes" [note]="note"></app-note>
+</div>
